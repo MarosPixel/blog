@@ -1,0 +1,11 @@
+<div class="comments">
+<% @comments.each do |comment| %>
+  <div class="comment">
+    <%= simple_format comment.content %>
+    <div class="detail">
+      Created by <%= comment.creator.name.capitalize %>, <%= comment.created_at %>
+    </div>
+    <hr />
+  </div>
+<% end %>
+</div>

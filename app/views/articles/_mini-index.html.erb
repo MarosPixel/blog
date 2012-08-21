@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Content</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.id %></td>
+      <td><%= link_to article.name, article %></td>
+      <td><%= truncate article.content, length: 30, omission: '...' %></td>
+      <td><%= article.created_at %></td>
+      <td><%= article.updated_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

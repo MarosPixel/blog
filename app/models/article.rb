@@ -4,5 +4,5 @@ class Article < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   attr_accessible :content, :creator_id, :name
-  validates :name, :content, :creator_id, presence: true
+  validates_presence_of :name, :content, :creator_id
 end

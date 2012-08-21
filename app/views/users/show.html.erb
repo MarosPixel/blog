@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<h1>User details</h1>
 <p>
   <b>Name:</b>
   <%= @user.name %>
@@ -8,3 +7,17 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back to Users', users_path %>
+
+<h2>Articles [<%= @articles.count %>]</h2>
+<% unless @articles.empty? %>
+  <%= render 'articles/mini-index' %>
+<% else %>
+  User doesn't have articles.
+<% end %>
+
+<h2>Comments [<%= @comments.count %>]</h2>
+<% unless @comments.empty? %>
+  <%= render 'comments/mini-index' %>
+<% else %>
+  User doesn't have comments.
+<% end %>

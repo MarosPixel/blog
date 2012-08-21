@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Commentable</th>
+      <th>Type</th>
+      <th>Content</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.id %></td>
+      <td><%= link_to comment.commentable.name, comment.commentable %></td>
+      <td><%= comment.commentable_type %></td>
+      <td><%= truncate comment.content, length: 30, omission: '...' %></td>
+      <td><%= comment.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
